@@ -28,5 +28,13 @@ createApp({
               }
             ]
     }
+  },
+  methods: {
+    thumbnailAutoplay: function () {
+      currentSlideIndex === slides.length-1 ? currentSlideIndex = 0 : currentSlideIndex+1;
+    }
   }
+  
 }).mount('#app')
+
+setInterval(thumbnailAutoplay, 3000)
