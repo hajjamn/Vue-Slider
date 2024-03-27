@@ -30,11 +30,16 @@ createApp({
     }
   },
   methods: {
-    thumbnailAutoplay: function () {
-      currentSlideIndex === slides.length-1 ? currentSlideIndex = 0 : currentSlideIndex+1;
+    prevSlide() {
+      if(this.currentSlideIndex > 0)
+        this.currentSlideIndex--
+      else
+        this.currentSlideIndex = this.slides.length - 1
+    },
+    nextSlide() {
+      if(this.currentSlideIndex < this.slides.length - 1)
+      this.currentSlideIndex++
+      else this.currentSlideIndex = 0
     }
   }
-  
 }).mount('#app')
-
-setInterval(thumbnailAutoplay, 3000)
